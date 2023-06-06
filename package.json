@@ -1,0 +1,11 @@
+{
+  "name": "reto-juego-de-boliche-ninjakoders",
+  "version": "1.0.0",
+  "description": "Reto Juego del Boliche, NinjaKoders ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
