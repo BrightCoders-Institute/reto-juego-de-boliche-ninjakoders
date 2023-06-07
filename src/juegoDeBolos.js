@@ -46,3 +46,10 @@ export const sumaTotales = () => {
 
 tiros();
 sumaTotales();
+<<<<<<< HEAD
+=======
+
+const jugar = () => {
+  location.reload();
+}
+>>>>>>> 06e4cc3e6123159e1aca411ca91d8f25616f477f
