@@ -102,17 +102,16 @@ const sumaTotales = () => {
     const isSpare = totalesTurnos[i] === 10;
 
     if (isStrike) {
-      const puntajeExtra = totalesTurnos[i + 1];
-      calcularPuntos(i, puntajeExtra);
+      calcularPuntosStrike(i);
     } else if (isSpare) {
-      const puntajeExtra = tiro1[i + 1];
-      calcularPuntos(i, puntajeExtra);
+      calcularPuntosSpare(i);
     } else {
       calcularPuntos(i, 0);
     }
 
-    if (i === 9 && (tiro1[9] === 10 || puntajeFrames[9] === 10)) {
-      const tiroExtra = generarNumeroAleatorio(10);
+    const isExtraFrame = i === 9;
+    if (isExtraFrame && (tiro1[i] === 10 || puntajeFrames[i] === 10)) {
+      const tiroExtra = Math.round(Math.random() * 10);
       sumaPuntos += tiroExtra;
     }
 
@@ -120,7 +119,6 @@ const sumaTotales = () => {
     puntosTotales.innerHTML = puntajeFrames[i];
   }
 };
-
 
 generarTiros();
 sumaTotales();
