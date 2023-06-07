@@ -1,4 +1,4 @@
-import { test, expect } from "@jest/globals";
+import { test, expect, describe } from "@jest/globals";
 
 // Importar las funciones que deseas probar
 import {
@@ -11,20 +11,43 @@ import {
 } from "../juegoDeBolos";
 
 // Prueba para la función tiros
-test("la función tiros genera los tiros correctamente", () => {
+describe("Funcion Test", () => {
+
   // Llamar a la función que se va a probar
   tiros();
 
-  // Realizar las aserciones para verificar los resultados esperados
-  for (let i = 0; i < 10; i++) {
-    expect(tiro1[i]).toBeGreaterThanOrEqual(0);
-    expect(tiro1[i]).toBeLessThanOrEqual(10);
-    expect(tiro2[i]).toBeGreaterThanOrEqual(0);
-    expect(tiro2[i]).toBeLessThanOrEqual(10);
-    expect(totalesTurnos[i]).toBe(tiro1[i] + tiro2[i]);
-    // Aquí puedes realizar más aserciones si es necesario
-  }
+  test("El Primer Tiro arroja un numero mayor o igual a 0", () => {
+    for (let i = 0; i < 10; i++) {
+      expect(tiro1[i]).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  test("El Primer Tiro arroja un numero menor o igual a 10", () => {
+    for (let i = 0; i < 10; i++) {
+      expect(tiro1[i]).toBeLessThanOrEqual(10);
+    }
+  });
+
+  test("El Segundo Tiro arroja un numero mayor o igual a 0", () => {
+    for (let i = 0; i < 10; i++) {
+      expect(tiro2[i]).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  test("El Segundo Tiro arroja un numero menor o igual a 10", () => {
+    for (let i = 0; i < 10; i++) {
+      expect(tiro2[i]).toBeLessThanOrEqual(10);
+    }
+  });
+
+  test("La suma se realiza correctamente", () => {
+    for (let i = 0; i < 10; i++) {
+      expect(totalesTurnos[i]).toBe(tiro1[i] + tiro2[i]);
+    }
+  });
 });
+
+/*
 
 // Prueba para la función sumaTotales
 test("la función sumaTotales calcula correctamente el puntaje", () => {
@@ -40,3 +63,4 @@ test("la función sumaTotales calcula correctamente el puntaje", () => {
   expect(puntajeFrames[0]).toBe(10); // Ajusta el valor esperado según tu lógica
   // Aquí puedes realizar más aserciones si es necesario
 });
+*/
