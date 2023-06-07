@@ -17,3 +17,5 @@ Things you may want to cover:
 - Credits
 - Badges
   
+  # Badges
+  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ff48188319f444ecb3bee8f7405202a9)](https://app.codacy.com/gh/BrightCoders-Institute/reto-juego-de-boliche-ninjakoders/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
