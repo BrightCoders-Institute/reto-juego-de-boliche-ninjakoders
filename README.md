@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hnBSOzCD)
 ![BrightCoders Logo](img/logo.png)
 
 # El Juego de boliche
@@ -16,3 +17,5 @@ Things you may want to cover:
 - Credits
 - Badges
   
+  # Badges
+  [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ff48188319f444ecb3bee8f7405202a9)](https://app.codacy.com/gh/BrightCoders-Institute/reto-juego-de-boliche-ninjakoders/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
