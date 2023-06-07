@@ -45,6 +45,7 @@ describe("Funcion Test", () => {
       expect(totalesTurnos[i]).toBe(tiro1[i] + tiro2[i]);
     }
   });
+
 });
 
 /*

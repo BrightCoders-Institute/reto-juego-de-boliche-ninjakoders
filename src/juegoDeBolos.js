@@ -20,29 +20,33 @@ export const tiros = () => {
 };
 
 export const sumaTotales = () => {
-  let sumaPuntos = 0;
-
+  //strike
   for (let i = 0; i < 10; i++) {
-    // Calcular los puntajes para los primeros nueve frames
     if (tiro1[i] === 10) {
-      sumaPuntos += totalesTurnos[i] + totalesTurnos[i + 1];
-    } else if (totalesTurnos[i] === 10) {
-      sumaPuntos += totalesTurnos[i] + tiro1[i + 1];
-    } else {
+      sumaPuntos = sumaPuntos + totalesTurnos[i] + totalesTurnos[i + 1];
+      puntajeFrames[i] = sumaPuntos;
+      console.log(puntajeFrames[i]);
+    }
+    //spare
+    else if (totalesTurnos[i] === 10) {
+      sumaPuntos = sumaPuntos + totalesTurnos[i] + tiro1[i + 1];
+      puntajeFrames[i] = sumaPuntos;
+      console.log(puntajeFrames[i]);
+    } //tiro normal
+    else {
       sumaPuntos += totalesTurnos[i];
+      puntajeFrames[i] = sumaPuntos;
+      console.log(puntajeFrames[i]);
     }
 
-    puntajeFrames[i] = sumaPuntos;
+    // const puntosTotales = document.getElementById(`totales_i${i.toString()}`);
+    // puntosTotales.innerHTML = puntajeFrames[i];
   }
-
-  // Calcular el puntaje adicional para el décimo frame
-  if (tiro1[9] === 10 || totalesTurnos[9] === 10) {
-    const tiroExtra = Math.round(Math.random() * 10);
-    sumaPuntos += tiroExtra;
-  }
-
-  puntajeFrames[9] = sumaPuntos;
 };
 
 tiros();
 sumaTotales();
+
+const jugar = () => {
+  location.reload();
+}
