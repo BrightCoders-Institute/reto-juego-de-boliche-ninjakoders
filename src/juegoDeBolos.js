@@ -80,22 +80,20 @@ const generarTiros = () => {
   }
 };
 
-const calcularPuntos = (i) => {
-  sumaPuntos += totalesTurnos[i];
-  puntajeFrames[i] = sumaPuntos;
-  console.log(puntajeFrames[i]);
-};
-
-const calcularPuntosStrike = (i) => {
-  sumaPuntos = sumaPuntos + totalesTurnos[i] + totalesTurnos[i + 1];
+const calcularPuntos = (i, puntajeExtra) => {
+  sumaPuntos += totalesTurnos[i] + puntajeExtra;
   puntajeFrames[i] = sumaPuntos;
   console.log(puntajeFrames[i]);
 };
 
 const calcularPuntosSpare = (i) => {
-  sumaPuntos = sumaPuntos + totalesTurnos[i] + tiro1[i + 1];
-  puntajeFrames[i] = sumaPuntos;
-  console.log(puntajeFrames[i]);
+  const puntajeExtra = tiro1[i + 1];
+  calcularPuntos(i, puntajeExtra);
+};
+
+const calcularPuntosStrike = (i) => {
+  const puntajeExtra = totalesTurnos[i + 1];
+  calcularPuntos(i, puntajeExtra);
 };
 
 const sumaTotales = () => {
@@ -105,18 +103,19 @@ const sumaTotales = () => {
     } else if (totalesTurnos[i] === 10) {
       calcularPuntosSpare(i);
     } else {
-      calcularPuntos(i);
+      calcularPuntos(i, 0);
     }
 
     if (tiro1[10] === 10 || puntajeFrames[10] === 10) {
-      const tiroExtra = generarNumeroAleatorio(10);
-      sumaPuntos = sumaPuntos + tiroExtra;
+      const tiroExtra = Math.round(Math.random() * 10);
+      sumaPuntos += tiroExtra;
     }
 
     const puntosTotales = document.getElementById(`totales_i${i.toString()}`);
     puntosTotales.innerHTML = puntajeFrames[i];
   }
 };
+
 
 generarTiros();
 sumaTotales();
