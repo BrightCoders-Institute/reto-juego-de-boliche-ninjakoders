@@ -98,16 +98,21 @@ const calcularPuntosStrike = (i) => {
 
 const sumaTotales = () => {
   for (let i = 0; i < 10; i++) {
-    if (tiro1[i] === 10) {
-      calcularPuntosStrike(i);
-    } else if (totalesTurnos[i] === 10) {
-      calcularPuntosSpare(i);
+    const isStrike = tiro1[i] === 10;
+    const isSpare = totalesTurnos[i] === 10;
+
+    if (isStrike) {
+      const puntajeExtra = totalesTurnos[i + 1];
+      calcularPuntos(i, puntajeExtra);
+    } else if (isSpare) {
+      const puntajeExtra = tiro1[i + 1];
+      calcularPuntos(i, puntajeExtra);
     } else {
       calcularPuntos(i, 0);
     }
 
-    if (tiro1[10] === 10 || puntajeFrames[10] === 10) {
-      const tiroExtra = Math.round(Math.random() * 10);
+    if (i === 9 && (tiro1[9] === 10 || puntajeFrames[9] === 10)) {
+      const tiroExtra = generarNumeroAleatorio(10);
       sumaPuntos += tiroExtra;
     }
 
