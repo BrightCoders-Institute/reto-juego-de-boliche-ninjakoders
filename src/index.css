@@ -1,0 +1,24 @@
+
+body h2{
+    background-color: black;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.table{
+    border:1px solid black;
+    border-radius: 5px;
+    margin-left: 30px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.tiro2 {
+    border: 1px solid black;
+}
