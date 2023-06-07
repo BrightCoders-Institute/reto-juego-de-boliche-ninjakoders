@@ -47,10 +47,3 @@ const sumaTotales = () => {
     puntosTotales.innerHTML = puntajeFrames[i];
   }
 };
-
-tiros();
-sumaTotales();
-
-const jugar = () => {
-  location.reload();
-}
